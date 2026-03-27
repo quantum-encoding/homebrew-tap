@@ -12,6 +12,7 @@ class TrashCli < Formula
   end
 
   test do
-    assert_match "trash", shell_output("#{bin}/trash --help 2>&1", 1)
+    assert_match "trash", shell_output("#{bin}/trash --help")
+    assert_match version.to_s, shell_output("#{bin}/trash --version")
   end
 end
