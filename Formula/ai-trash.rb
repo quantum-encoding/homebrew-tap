@@ -1,4 +1,4 @@
-class TrashCli < Formula
+class AiTrash < Formula
   desc "Move files to system trash — safe alternative to rm"
   homepage "https://github.com/quantum-encoding/ai-trash"
   url "https://github.com/quantum-encoding/ai-trash/archive/refs/tags/v1.0.0.tar.gz"
