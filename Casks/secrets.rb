@@ -5,8 +5,8 @@
 # signature inside the Mach-O is what lets `secrets` reach the biometric
 # Keychain and the Secure Enclave envelope key; a source build cannot (-34018).
 cask "secrets" do
-  version "2.5.0"
-  sha256 "41c5f4c1e2d387808900db8922cf9429a3901a7ef40ff554dc55e7813d0e484c"
+  version "2.6.0"
+  sha256 "4d24924c57d29a017722ca9d244e2eb63b19f59028d59e5d1798786f25250d1a"
 
   url "https://github.com/quantum-encoding/secrets-vault/releases/download/v#{version}/secrets-#{version}-macos-arm64.zip"
   name "secrets"
