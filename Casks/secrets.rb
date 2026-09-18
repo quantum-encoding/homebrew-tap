@@ -2,11 +2,15 @@
 # "source build" to brew, which then demands a current Xcode toolchain even
 # when `def install` only copies a file. A cask installs the prebuilt binary
 # with no toolchain check — and prebuilt is the point: the Developer ID
-# signature inside the Mach-O is what lets `secrets` reach the biometric
-# Keychain and the Secure Enclave envelope key; a source build cannot (-34018).
+# signature is what lets `secrets` reach the biometric Keychain and the Secure
+# Enclave envelope key; a source build cannot (-34018). It ships as Secrets.app
+# because that Keychain entitlement is restricted: macOS honours it only through
+# the Developer ID provisioning profile embedded in the bundle, and kills a bare
+# binary that claims it ("No matching profile found"). The CLI inside is linked
+# onto PATH; the bundle stays in the Caskroom.
 cask "secrets" do
-  version "2.6.0"
-  sha256 "4d24924c57d29a017722ca9d244e2eb63b19f59028d59e5d1798786f25250d1a"
+  version "2.6.1"
+  sha256 "37189f879801073547856e121b42f1a3779cdd04e0ea29535edc290b571e7fc0"
 
   url "https://github.com/quantum-encoding/secrets-vault/releases/download/v#{version}/secrets-#{version}-macos-arm64.zip"
   name "secrets"
@@ -15,12 +19,12 @@ cask "secrets" do
 
   depends_on arch: :arm64
 
-  binary "secrets-#{version}-macos-arm64/secrets"
+  binary "secrets-#{version}-macos-arm64/Secrets.app/Contents/MacOS/secrets", target: "secrets"
 
   caveats <<~EOS
     First use creates a vault via the enrollment ceremony (the recovery key
     is shown once and must be typed back). Touch ID prompts come from the
-    binary's Developer ID signature — do not re-sign or strip it. The
-    download is notarized, so a Gatekeeper first-run check passes.
+    bundle's Developer ID signature — do not re-sign or strip it, or move
+    the CLI out of Secrets.app. The bundle is notarized and stapled.
   EOS
 end
