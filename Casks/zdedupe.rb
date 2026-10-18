@@ -5,7 +5,7 @@
 # release. Notarized and stapled.
 cask "zdedupe" do
   version "1.0.4"
-  sha256 "a11b69bc230192dc3cb5d60a48f8c0a7213df384af6920f8c42a20afe0c03183"
+  sha256 "b16df08ff6d18b9cd2f3815d03bbb59986e473b82b8eca04a50d585658b77054"
 
   url "https://quantumencoding.io/updates/zdedupe/#{version}/zdedupe.zip"
   name "zdedupe"
