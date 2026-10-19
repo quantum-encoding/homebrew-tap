@@ -9,8 +9,8 @@
 # binary that claims it ("No matching profile found"). The CLI inside is linked
 # onto PATH; the bundle stays in the Caskroom.
 cask "secrets" do
-  version "2.7.0"
-  sha256 "b737efe28312a815344b886c46d99c9242642f1c5eeb88c5faacecf3ae5139df"
+  version "2.8.0"
+  sha256 "9cdc765459b5a0ac00d9eaa4fcd0bb0e1705208c3005cf571746a33387d2316f"
 
   url "https://github.com/quantum-encoding/secrets-vault/releases/download/v#{version}/secrets-#{version}-macos-arm64.zip"
   name "secrets"
