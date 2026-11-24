@@ -4,8 +4,8 @@
 # sha256 here are rewritten by zdedupe-app/scripts/release.sh on every
 # release. Notarized and stapled.
 cask "zdedupe" do
-  version "1.0.4"
-  sha256 "b16df08ff6d18b9cd2f3815d03bbb59986e473b82b8eca04a50d585658b77054"
+  version "1.0.5"
+  sha256 "af98903167ef3dac7a10026e5f3e012a7245559288ec96af49c9762ae6e1e6d9"
 
   url "https://quantumencoding.io/updates/zdedupe/#{version}/zdedupe.zip"
   name "zdedupe"
